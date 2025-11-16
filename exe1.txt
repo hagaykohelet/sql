@@ -1,0 +1,29 @@
+1) SELECT * from customers 122 rows
+
+2) SELECT firstname, lastname FROM employees
+
+3)SELECT employeenumber,firstname, jobtitle FROM employees
+
+4)SELECT productcode, productname from products
+
+5)SELECT officecode from offices
+
+6)SELECT * from orders
+
+7) select customerNumber from payments
+
+8) select ordernumber, orderdate from orders
+
+9)select * from productlines
+
+10)select checknumber, amount from payments
+
+11) select quantityordered, priceeach from orderdetails
+
+12) SELECT * from products
+
+13)SELECT productline from productlines
+
+14) SELECT phone from offices
+
+15) SELECT customername from customers
