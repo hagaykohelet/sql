@@ -1,0 +1,113 @@
+1) CREATE TABLE Artist(
+artist_id int PRIMARY KEY,
+name TEXT NOT null,
+country TEXT,
+formation_year int)
+
+2)CREATE TABLE Albums(
+album_id int PRIMARY KEY,
+title TEXT NOT null,
+release_date DATE,
+artist_id int,
+FOREIGN KEY(artist_id) REFERENCES artist(artist_id))
+
+3) CREATE TABLE songs(
+song_id int PRIMARY KEY,
+title TEXT NOT null,
+duration_seconds DATE CHECK(duration_seconds > 0 ),
+album_id int,
+FOREIGN KEY(album_id) REFERENCES album(album_id))
+
+4)CREATE TABLE users(
+user_id int PRIMARY KEY,
+username TEXT UNIQUE NOT null,
+email TEXT NOT null,
+join_date DATE);
+
+5)CREATE TABLE playlists(
+playlist_id int PRIMARY KEY,
+user_id int,
+FOREIGN KEY(user_id) REFERENCES users(user_id),
+name TEXT NOT null)
+
+6)albums & artists, songs& albums, playlists& users 
+
+CREATE TABLE playlist_songs( playlist_id int , 
+song_id int, 
+PRIMARY KEY (playlist_id,song_id), 
+FOREIGN KEY (playlist_id) REFERENCES playlists(playlist_id), 
+FOREIGN KEY (song_id) REFERENCES songs(song_id));
+
+
+7) ALTER TABLE artist
+ADD followers_count int 
+
+8)UPDATE artist
+SET followers_count = 1500
+
+UPDATE artist
+SET followers_count = 15000000
+where name = 'the lumineers'
+
+9)UPDATE users
+set user_name = 'usher'
+WHERE user_id = 401;
+
+10)DELETE FROM Songs WHERE album_id = 204;
+DELETE FROM Albums WHERE album_id = 204;
+
+11) SELECT title, duration_seconds FROM songs
+
+12) SELECT artist_id AS ID, name AS artist_name from artist
+
+13) SELECT * from artist WHERE formation_year < 2000
+
+14)a.SELECT * FROM `songs` WHERE duration_seconds > 200 OR title = '%love%'
+   b. SELECT * FROM `artist` WHERE country not LIKE 'usa' and followers_count > 1000000
+
+15) a.  SELECT * FROM `songs` WHERE duration_seconds BETWEEN 150 AND 250
+
+    b.SELECT * FROM `users` WHERE username IN ('Chill_Vibes', 'dani','ljay')
+
+16) a. SELECT COUNT(*) FROM `songs`
+
+    b. SELECT title, MAX(duration_seconds) FROM `songs`
+
+    c.SELECT sum(duration_seconds) FROM `songs` WHERE album_id = 202
+
+    d. SELECT AVG(duration_seconds) FROM `songs`
+
+17) SELECT albums.title, artist.name FROM `albums` INNER JOIN artist on albums.artist_id = artist.artist_id
+
+18) SELECT songs.title, playlists.name
+FROM `playlist_songs`
+INNER JOIN songs
+on playlist_songs.song_id = songs.song_id
+INNER join playlists
+on playlist_songs.playlist_id = playlists.playlist_id;
+
+19)a. SELECT albums.title, songs.title 
+FROM `albums`
+LEFT JOIN songs
+on songs.album_id = albums.album_id
+WHERE songs.title is null;
+  
+   b.כי זה תלוי לאיזה טבלה אני מקשר 
+
+20)SELECT artist.name, albums.album_id 
+FROM `artist`
+LEFT JOIN albums
+on albums.artist_id = artist.artist_id
+WHERE albums.title IS null;
+
+21)SELECT songs.title as song_name, albums.title AS album, artist.name AS artist
+FROM songs
+INNER JOIN albums
+on songs.album_id = albums.album_id
+INNER JOIN artist
+on albums.artist_id = artist.artist_id
+WHERE artist.country = "UK" and songs.duration_seconds > 300;
+
+
+
+

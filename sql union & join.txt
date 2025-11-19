@@ -1,0 +1,12 @@
+1) a. SELECT LecturerName FROM lecturers UNION ALL SELECT LecturerName FROM lecturers_new,19
+   b. SELECT LecturerName FROM lecturers UNION SELECT LecturerName FROM lecturers_new, 18
+   c. 
+
+4) select students.FullName, classes.Class ,courses.CourseName 
+from students 
+INNER JOIN classes 
+on students.ClassId = classes.Id 
+INNER JOIN courses 
+ON classes.CourseId = courses.Id;
+
+   
