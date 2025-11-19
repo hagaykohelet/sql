@@ -1,0 +1,56 @@
+1) a. SELECT * FROM customers WHERE country LIKE 'USA'
+
+   b. SELECT * FROM customers WHERE country in ('france' , 'germany')
+
+   c. SELECT * FROM customers WHERE country LIKE 'USA' AND state LIKE 'CA'
+
+   d. SELECT * FROM customers WHERE customername LIKE 'T%' or customername like 'S%'
+
+
+2) a. SELECT * from productlines WHERE productline LIKE 'Classic Cars'
+
+3) a. SELECT * from employees WHERE jobTitle = 'sales rep'
+
+   b. SELECT * from employees WHERE officecode in(1 , 4)
+
+4) a.SELECT * from payments WHERE amount > 10000
+
+   b. SELECT * from payments WHERE paymentDate LIKE '2004-10-19' or paymentDate LIKE '2005-06-01'
+
+5) a. SELECT * from products where quantityinstock < 1000 and buyprice > 50
+
+   b. SELECT * from products where productVendor in ('min lin diecast', 'exoto designs')
+
+6) a. SELECT * from orders WHERE status IN ('cancelled', 'on hold')
+
+   b. SELECT * FROM `orders` where orderDate > '2005-01-01' and status LIKE 'shipped'
+ 
+part 2
+
+
+1) a. SELECT * FROM customers WHERE country in ('canada', 'USA' , 'france')
+   
+   b. SELECT * FROM customers WHERE country not in ('australia', 'japan' , 'new zealand')
+
+2) a. SELECT * FROM employees where jobTitle not in ('president', 'sales rep') AND jobTitle NOT LIKE '%manager%'
+
+3) a. SELECT * FROM products where buyprice BETWEEN 20 AND 50
+
+   b. SELECT * FROM products WHERE quantityInStock BETWEEN 2000 AND 3000 and buyprice NOT BETWEEN 20 AND 45
+
+   c. SELECT * FROM products WHERE MSRP NOT BETWEEN 70 AND 100
+
+   d. SELECT * FROM products WHERE quantityInStock BETWEEN 1000 AND 5000
+
+   e. SELECT * FROM products WHERE productVendor LIKE 'motor city art classics' or productVendor LIKE '%welly diecast%'
+
+4) a. SELECT * FROM orders WHERE status in('shipped', 'cancelled')
+
+   b. SELECT * FROM orders WHERE ordernumber not in (10102, 10101, 10100)
+
+   c.  SELECT * FROM orders WHERE orderdate BETWEEN '2003-01-01' and '2003-12-31'
+
+5) a. SELECT * FROM offices WHERE officeCode BETWEEN 1 AND 3 OR officeCode = 7
+
+
+

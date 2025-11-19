@@ -1,0 +1,37 @@
+1)CREATE DATABASE school
+
+2)CREATE TABLE teachers_backup(	ID INT PRIMARY KEY,
+TeacherName VARCHAR(50) NOT null, 
+Email VARCHAR (70)NOT null,
+phone VARCHAR(15))
+
+3) CREATE TABLE study_hours AS
+SELECT *
+FROM study_hours_extended
+WHERE ClassId IN(1, 2, 3, 4, 5)
+
+4)alter table lectures
+ add column Email VARCHAR(70) not null
+
+5) alter table lectures 
+  modify lecturename VARCHAR(80) not null
+
+6) alter table `classes`
+   drop `status`
+
+7)DROP TABLE teachers_backup
+
+8)CREATE TABLE students AS
+SELECT *
+FROM students_temp
+
+9)alter table `students`
+   drop `personalId`
+
+10)alter table `students`
+   add age tinyint
+
+11)
+
+
+
